@@ -22,11 +22,20 @@ class FleetServer < Formula
     end
   end
 
-  recommends "ripgrep" # enables session search
-
   def install
     bin.install "fleet-server"
     doc.install "LICENSE", "NOTICE", "THIRD-PARTY-NOTICES.md"
+  end
+
+  def caveats
+    <<~EOS
+      Optional: install ripgrep to enable session search:
+        brew install ripgrep
+
+      Start on port 3011 (data in ~/.fleet-server):
+        brew services start fleet-server
+      Then add http://<host>:3011 as a host in Agents Hub.
+    EOS
   end
 
   service do
