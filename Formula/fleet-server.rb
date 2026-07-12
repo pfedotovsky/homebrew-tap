@@ -1,24 +1,24 @@
 class FleetServer < Formula
   desc "Single-binary agent host server for Agents Hub (fork of CloudCLI UI server)"
   homepage "https://github.com/pfedotovsky/agents-fleet-hub"
-  version "0.1.2"
+  version "0.1.3"
   license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
       url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/server-v#{version}/fleet-server-#{version}-darwin-arm64.tar.gz"
-      sha256 "49867a62248b2a008f61962f5787c466b497b921ad6f0c1b51079a777e2179ad"
+      sha256 "cfd2467122a5145518e99f310569e23a43c9074d1717e1dcccb6ec5d08b39b48"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/server-v#{version}/fleet-server-#{version}-linux-x64.tar.gz"
-      sha256 "c1af331e14464efbbd44c09579a1544091b2519ffcfe21565e5f1998861a1c24"
+      sha256 "9d00eb5d288dcf75813f0fcc46ee8d2993453748ebe300b4d8e8b23019b213a3"
     end
     on_arm do
       url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/server-v#{version}/fleet-server-#{version}-linux-arm64.tar.gz"
-      sha256 "556426c52ddf79e973f19065d8d691d02720dad5f9c25b9dff69e5abfeb67ccc"
+      sha256 "2c276d87c554b7d2daf6bb46c9c2d67b804257a045bb75154f1e059aaa93de76"
     end
   end
 
