@@ -5,13 +5,14 @@
 Desktop app for controlling coding agents on remote CloudCLI hosts.
 
 ```sh
-brew install --no-quarantine pfedotovsky/tap/agents-hub
+brew install --cask pfedotovsky/tap/agents-hub
 ```
 
-> The `--no-quarantine` flag is needed while the app ships unsigned —
-> without it Gatekeeper reports the app as damaged. Once releases are
-> signed and notarized, plain `brew install pfedotovsky/tap/agents-hub`
-> will work.
+> Releases are not notarized yet. If macOS refuses to open the app,
+> clear the quarantine flag:
+> `xattr -dr com.apple.quarantine "/Applications/Agents Hub.app"`
+> (or set `HOMEBREW_CASK_OPTS=--no-quarantine` before installing).
+> This will no longer be needed once releases are signed and notarized.
 
 ### Updating the cask after a new release
 

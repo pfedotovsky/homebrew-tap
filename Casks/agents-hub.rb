@@ -10,9 +10,9 @@ cask "agents-hub" do
   app "Agents Hub.app"
 
   caveats <<~EOS
-    Agents Hub is not signed or notarized yet. If macOS reports the app
-    as damaged, reinstall with:
-      brew reinstall --no-quarantine agents-hub
+    Agents Hub is not notarized yet. If macOS refuses to open the app,
+    clear the quarantine flag:
+      xattr -dr com.apple.quarantine "/Applications/Agents Hub.app"
   EOS
 
   zap trash: [
