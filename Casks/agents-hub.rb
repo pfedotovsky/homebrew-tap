@@ -1,6 +1,6 @@
 cask "agents-hub" do
-  version "0.1.2"
-  sha256 "097ca24e75441ae2583a31a8bcc942e1da7cff3341ee5196fab1a4f5f3ae343c"
+  version "0.1.3"
+  sha256 "65c005c66ad7effb14880c94b0a4c486d2c7094c33e4b1f13dd97e3a1df03f54"
 
   url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/v#{version}/Agents.Hub_#{version}_universal.dmg"
   name "Agents Hub"
