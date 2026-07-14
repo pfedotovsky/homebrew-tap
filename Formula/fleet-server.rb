@@ -1,24 +1,24 @@
 class FleetServer < Formula
   desc "Single-binary agent host server for Agents Hub (fork of CloudCLI UI server)"
   homepage "https://github.com/pfedotovsky/agents-fleet-hub"
-  version "0.1.5"
+  version "0.1.6"
   license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
       url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/server-v#{version}/fleet-server-#{version}-darwin-arm64.tar.gz"
-      sha256 "318228807a4bf46a1fc1eb7f832a2c349ebd7aa6d0aa6f664336993968b98830"
+      sha256 "92d6e0fefcdf6a3a0948e797ed79373b30e7b099618fc62464bb725a8062b6f1"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/server-v#{version}/fleet-server-#{version}-linux-x64.tar.gz"
-      sha256 "3c5615f70b473f971ea2edb995351741b78eec694bbe3e5c079c05b810d38096"
+      sha256 "6338a0f60ca54637162fccee14df68ee605c2119a7d107379e60a74de11a3df2"
     end
     on_arm do
       url "https://github.com/pfedotovsky/agents-fleet-hub/releases/download/server-v#{version}/fleet-server-#{version}-linux-arm64.tar.gz"
-      sha256 "45ffdf1ac92430d511557282a98d1ab908124c78842a754037338b5e1012374c"
+      sha256 "6a738eb280739a287101d72746cf3b0cb890c62a858275da95f20f3990f87255"
     end
   end
 
@@ -31,6 +31,9 @@ class FleetServer < Formula
     <<~EOS
       Optional: install ripgrep to enable session search:
         brew install ripgrep
+
+      For remote access, create the host login locally:
+        fleet-server auth setup
 
       Start on port 3011 (data in ~/.fleet-server):
         brew services start fleet-server
