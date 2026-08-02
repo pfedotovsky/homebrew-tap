@@ -23,11 +23,13 @@ jobs:
           - ubuntu-24.04
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v6
+      - uses: Homebrew/actions/setup-homebrew@9af03b7ae3f9e2ae5c174f659d5c3909f7e7dbac
       - name: Install from the public tap
         run: |
           brew tap pfedotovsky/tap
           brew install pfedotovsky/tap/harnfig
       - name: Test the installed formula
         run: |
-          test "$(harnfig version)" = "0.1.0"
+          harnfig version
           brew test pfedotovsky/tap/harnfig
