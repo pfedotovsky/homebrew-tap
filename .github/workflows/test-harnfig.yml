@@ -1,0 +1,33 @@
+name: Test harnfig formula
+
+on:
+  push:
+    paths:
+      - Formula/harnfig.rb
+      - .github/workflows/test-harnfig.yml
+  pull_request:
+    paths:
+      - Formula/harnfig.rb
+      - .github/workflows/test-harnfig.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    strategy:
+      matrix:
+        os:
+          - macos-15
+          - ubuntu-24.04
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Install from the public tap
+        run: |
+          brew tap pfedotovsky/tap
+          brew install pfedotovsky/tap/harnfig
+      - name: Test the installed formula
+        run: |
+          test "$(harnfig version)" = "0.1.0"
+          brew test pfedotovsky/tap/harnfig
